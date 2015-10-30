@@ -17,7 +17,7 @@ We will be using the [reqres](http://reqres.in/) for our API, which is an open A
 - Write some jQuery that handles the click event on our get current users section
 
 ``` javascript
-  $('body').on('click', '.js-get-users', function () {
+  $('.js-get-users').on('click', function () {
     // do stuff here
   })
 ```
@@ -25,7 +25,7 @@ We will be using the [reqres](http://reqres.in/) for our API, which is an open A
 - Now let's return the ajax request
 
 ``` javascript
-  $('body').on('click', '.js-get-users', function () {
+  $('.js-get-users').on('click', function () {
     return $.ajax({
       method: 'GET',
       url: 'http://reqres.in/api/users?page=1',
@@ -42,7 +42,7 @@ We are telling our request 3 things:
 - Let's give our app something to do if the request is successful
 
 ``` javascript
-  $('body').on('click', '.js-get-users', function () {
+  $('.js-get-users').on('click', function () {
 
     function handleSuccess(res) {
       console.log(res);
@@ -88,7 +88,7 @@ What this does is take the data, iterates through it with a loop and writes it i
 - Call the insertData function with the data we recieved.
 
 ``` javascript
-  $('body').on('click', '.js-get-users', function () {
+  $('.js-get-users').on('click', function () {
     return $.ajax({
       method: 'GET',
       url: 'http://reqres.in/api/users?page=1',
@@ -114,7 +114,7 @@ GET requests are the easiest of requests. POSTs are a bit more tricky, but not b
   - you press enter
 
 ``` javascript
-  $('body').on('submit', '.js-add-user', function (ev) {
+  $('.js-add-user').on('submit', function (ev) {
     // By default a form submission will cause a page to reload
     // but it is possible to tell the event to cancel it's default action like this
     ev.preventDefault();
@@ -126,7 +126,7 @@ GET requests are the easiest of requests. POSTs are a bit more tricky, but not b
 - The next thing we want to do is capture the value of our input forms using .val()
 
 ``` javascript
-  $('body').on('click', '.js-add-user', function () {
+  $('.js-add-user').on('submit', function () {
     var userName = $('.js-name').val();
     var userJob = $('.js-job').val();
   });
@@ -137,7 +137,7 @@ GET requests are the easiest of requests. POSTs are a bit more tricky, but not b
 - Have the function return our ajax POST request
 
 ``` javascript
-  $('body').on('click', '.js-add-user', function () {
+  $('.js-add-user').on('submit', function () {
     var userName = $('.js-name').val();
     var userJob = $('.js-job').val();
     return $.ajax({
@@ -155,7 +155,7 @@ Our data is currently the values from our input fields.
 - Let's add success and error handlers to our request.
 
 ``` javascript
-  $('body').on('click', '.js-add-user', function () {
+  $('.js-add-user').on('submit', function () {
     var userName = $('.js-name').val();
     var userJob = $('.js-job').val();
 
@@ -175,7 +175,7 @@ Our data is currently the values from our input fields.
 - Inside our error function, we'll alert the user that something went wrong.
 
 ``` javascript
-  $('body').on('click', '.js-add-user', function (e) {
+  $('.js-add-user').on('submit', function (e) {
     e.preventDefault();
     var userName = $('.js-name').val();
     var userJob = $('.js-job').val();
@@ -205,4 +205,3 @@ Our data is currently the values from our input fields.
 ```
 
 Congrats!  You've just created your first CRUDdy app!
-
